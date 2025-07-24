@@ -1,8 +1,17 @@
 package com.springbootintro;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import java.util.Objects;
 
+
+@Entity
 public class SoftwareEngineer {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String techStack;
@@ -12,6 +21,8 @@ public class SoftwareEngineer {
         this.name = name;
         this.techStack = techStack;
     }
+
+    public SoftwareEngineer() {}
 
     public int getId() {
         return id;
