@@ -29,4 +29,11 @@ public class SoftwareEngineerService {
     public void deleteSoftwareEngineerById(Integer id) {
         softwareEngineerRepository.deleteById(id);
     }
+
+    public void updateSoftwareEngineerById(Integer id, SoftwareEngineer update) {
+        SoftwareEngineer softwareEngineer = getSoftwareEngineerById(id);
+        softwareEngineer.setName(update.getName());
+        softwareEngineer.setTechStack(update.getTechStack());
+        softwareEngineerRepository.save(softwareEngineer);
+    }
 }
